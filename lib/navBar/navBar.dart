@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutter_app/views/defaultCounter.dart';
+import 'package:my_first_flutter_app/views/rgbSlider.dart';
 
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
@@ -18,10 +19,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     MyHomePage(
         title: "The Epic Home Page"
     ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    MySliderPage(),
     Text(
       'Index 2: School',
       style: optionStyle,
@@ -50,8 +48,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.flourescent_sharp),
+            label: 'Color Slider',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
