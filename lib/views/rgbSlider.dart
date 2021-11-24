@@ -16,9 +16,24 @@ class _MySliderPageState extends State<MySliderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
+      // backgroundColor: Colors.amberAccent,
+
+      backgroundColor: Color.fromRGBO(
+          _currentSliderValueRed.round(),
+          _currentSliderValueGreen.round(),
+          _currentSliderValueBlue.round(),
+          1
+      ),
+
       body: Center(
         child: Column(
+
+          mainAxisAlignment: MainAxisAlignment.center,
+          verticalDirection: VerticalDirection.down,
+
           children: <Widget>[
+
+            Text("Red: " + _currentSliderValueRed.round().toString()),
 
             Slider.adaptive(
               value: _currentSliderValueRed,
@@ -32,6 +47,8 @@ class _MySliderPageState extends State<MySliderPage> {
               }
             ),
 
+            Text("Green: " + _currentSliderValueGreen.round().toString()),
+
             Slider.adaptive(
                 value: _currentSliderValueGreen,
                 min: 0,
@@ -43,6 +60,8 @@ class _MySliderPageState extends State<MySliderPage> {
                   });
                 }
             ),
+
+            Text("Blue: " + _currentSliderValueBlue.round().toString()),
 
             Slider.adaptive(
                 value: _currentSliderValueBlue,
