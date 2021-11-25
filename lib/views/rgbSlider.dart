@@ -16,8 +16,6 @@ class _MySliderPageState extends State<MySliderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      // backgroundColor: Colors.amberAccent,
-
       backgroundColor: Color.fromRGBO(
           _currentSliderValueRed.round(),
           _currentSliderValueGreen.round(),
@@ -25,54 +23,87 @@ class _MySliderPageState extends State<MySliderPage> {
           1
       ),
 
-      body: Center(
+      body: Container(
+
         child: Column(
 
-          mainAxisAlignment: MainAxisAlignment.center,
-          verticalDirection: VerticalDirection.down,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
           children: <Widget>[
 
-            Text("Red: " + _currentSliderValueRed.round().toString()),
+            Container(
+              child: Column(
 
-            Slider.adaptive(
-              value: _currentSliderValueRed,
-              min: 0,
-              max: 255,
-              label: _currentSliderValueRed.round().toString(),
-              onChanged: (double value) {
-                setState(() {
-                  _currentSliderValueRed = value;
-                });
-              }
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+
+                children: <Widget>[
+                  
+                  Text("Hexadecimal: " + Color.fromRGBO(
+                      _currentSliderValueRed.round(),
+                      _currentSliderValueGreen.round(),
+                      _currentSliderValueBlue.round(),
+                      1
+                  ).value.toRadixString(16))
+                  
+                ],
+              ),
             ),
 
-            Text("Green: " + _currentSliderValueGreen.round().toString()),
+            Container(
 
-            Slider.adaptive(
-                value: _currentSliderValueGreen,
-                min: 0,
-                max: 255,
-                label: _currentSliderValueGreen.round().toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    _currentSliderValueGreen = value;
-                  });
-                }
-            ),
+              child: Column(
 
-            Text("Blue: " + _currentSliderValueBlue.round().toString()),
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
 
-            Slider.adaptive(
-                value: _currentSliderValueBlue,
-                min: 0,
-                max: 255,
-                label: _currentSliderValueBlue.round().toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    _currentSliderValueBlue = value;
-                  });
-                }
+                children: <Widget>[
+
+                  Text("Red: " + _currentSliderValueRed.round().toString()),
+
+                  Slider.adaptive(
+                      value: _currentSliderValueRed,
+                      min: 0,
+                      max: 255,
+                      label: _currentSliderValueRed.round().toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          _currentSliderValueRed = value;
+                        });
+                      }
+                  ),
+
+                  Text("Green: " + _currentSliderValueGreen.round().toString()),
+
+                  Slider.adaptive(
+                      value: _currentSliderValueGreen,
+                      min: 0,
+                      max: 255,
+                      label: _currentSliderValueGreen.round().toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          _currentSliderValueGreen = value;
+                        });
+                      }
+                  ),
+
+                  Text("Blue: " + _currentSliderValueBlue.round().toString()),
+
+                  Slider.adaptive(
+                      value: _currentSliderValueBlue,
+                      min: 0,
+                      max: 255,
+                      label: _currentSliderValueBlue.round().toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          _currentSliderValueBlue = value;
+                        });
+                      }
+                  ),
+
+                ],
+              ),
+
             ),
 
           ]
