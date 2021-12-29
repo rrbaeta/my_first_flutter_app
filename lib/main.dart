@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutter_app/navBar/navBar.dart';
-import 'package:my_first_flutter_app/views/defaultCounter.dart';
 
 void main() {
   runApp(const MyApp());
